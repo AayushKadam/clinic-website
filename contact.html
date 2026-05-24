@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Aura Maternity & Pediatrics Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SHARED HEADER -->
+  <clinic-header></clinic-header>
+
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <span class="sub-heading">Find Our Clinic</span>
+      <h1>Contact & Location</h1>
+      <p>Reach out via phone, email, or find us directly at the Springfield Medical Plaza. We are open 6 days a week.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT & MAP GRID -->
+  <section class="contact-section section-padding bg-light" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- Address & Details Card -->
+        <div class="contact-info-card">
+          <h3 class="info-title">Clinic Details</h3>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <!-- Location Marker Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="contact-svg"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="info-details">
+              <h4>Maternity Plaza Location</h4>
+              <p>Suite 204, Springfield Medical Plaza<br>Springfield, OR 97477</p>
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Get Directions &rarr;</a>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <!-- Phone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="contact-svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div class="info-details">
+              <h4>Contact Lines</h4>
+              <p>General Front Desk: <a href="tel:+15417543010">+1 (541) 754-3010</a><br>Emergency Delivery: <a href="tel:+15417543019">+1 (541) 754-3019</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <!-- Clock Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="contact-svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="info-details">
+              <h4>Operational Hours</h4>
+              <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed (On-Call Deliveries Only)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Styled Map & Deferred Iframe Load -->
+        <div class="map-container-wrapper">
+          <div class="map-placeholder-box" id="map-box">
+            <div class="map-graphic-mock">
+              <div class="map-grid-pattern"></div>
+              <div class="map-park"></div>
+              <div class="map-river"></div>
+              <div class="map-road-1"></div>
+              <div class="map-road-2"></div>
+              
+              <!-- Pulsing Bounce Marker pin -->
+              <div class="map-marker-pin animate-bounce">
+                <div class="pin-card">
+                  <h5>Aura Maternity Clinic</h5>
+                  <p>Springfield Medical Plaza</p>
+                </div>
+                <div class="pin-dot"></div>
+              </div>
+            </div>
+
+            <!-- Controls overlay -->
+            <div class="map-overlay-controls">
+              <button class="map-ctrl-btn" id="map-zoom-in">+</button>
+              <button class="map-ctrl-btn" id="map-zoom-out">-</button>
+            </div>
+
+            <!-- Lazy loader box -->
+            <div class="map-load-panel">
+              <p>For live directions and route transit estimation, load the dynamic Google Map.</p>
+              <button class="btn-primary" id="btn-load-map">Load Live Google Map</button>
+            </div>
+          </div>
+
+          <!-- Hidden Target Iframe -->
+          <iframe 
+            src="about:blank" 
+            class="live-map-iframe hidden" 
+            id="live-google-map" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Google Maps Location">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT DRIVE CALLOUT (BOOK APPOINTMENT ALWAYS VISIBLE CTA) -->
+  <section class="booking-section section-padding bg-light" style="border-top: 1px solid var(--border-color);">
+    <div class="container text-center" style="max-width: 800px;">
+      <h2 class="section-title">Nurture Your Family Health Journey</h2>
+      <p class="section-desc" style="margin-bottom: 30px;">Request a maternal ultrasound session or child checkup directly via our online booking dashboard.</p>
+      <a href="booking.html" class="btn-primary">Book Consultation Page</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <clinic-footer></clinic-footer>
+
+  <script src="header.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="app.js"></script>
+</body>
+</html>
