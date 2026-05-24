@@ -2058,3 +2058,300 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ==========================================================================
+   11. PREMIUM CENTERED WHATSAPP BOOKING PAGE
+   ========================================================================== */
+.premium-booking-section {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  z-index: 1;
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+  animation: float-blob 8s ease-in-out infinite;
+}
+
+.glow-blob-1 {
+  width: 400px;
+  height: 400px;
+  background-color: var(--primary);
+  top: 10%;
+  left: 15%;
+}
+
+.glow-blob-2 {
+  width: 500px;
+  height: 500px;
+  background-color: var(--secondary);
+  bottom: 10%;
+  right: 15%;
+  animation-delay: -4s;
+}
+
+@keyframes float-blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.15);
+  }
+}
+
+.premium-booking-card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 28px;
+  padding: 56px 48px;
+  box-shadow: 
+    0 10px 30px rgba(154, 90, 96, 0.02),
+    0 30px 70px rgba(154, 90, 96, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.premium-booking-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 15px 35px rgba(154, 90, 96, 0.03),
+    0 35px 85px rgba(154, 90, 96, 0.08);
+}
+
+.premium-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  position: relative;
+}
+
+.premium-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(37, 211, 102, 0.4);
+  animation: rotate-border 20s linear infinite;
+}
+
+.premium-icon-wrapper svg {
+  width: 44px;
+  height: 44px;
+  animation: pulse-icon 2s infinite ease-in-out;
+}
+
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.premium-badge {
+  background-color: var(--secondary-light);
+  color: var(--secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: 1px solid rgba(70, 139, 128, 0.15);
+}
+
+.premium-card-title {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.premium-card-desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 460px;
+  margin-bottom: 36px;
+}
+
+.premium-dropdown-wrapper {
+  width: 100%;
+  margin-bottom: 32px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.premium-dropdown-wrapper label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding-left: 4px;
+}
+
+.premium-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.premium-select {
+  width: 100%;
+  appearance: none;
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  padding: 14px 44px 14px 18px;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(154, 90, 96, 0.01);
+}
+
+.premium-select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(70, 139, 128, 0.12);
+}
+
+.premium-select-container::after {
+  content: '▼';
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.premium-select:focus + .premium-select-container::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.btn-whatsapp-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #25D366 0%, #1BD741 50%, #128C7E 100%);
+  background-size: 200% auto;
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 18px 32px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 36px;
+  text-decoration: none;
+}
+
+.btn-whatsapp-premium:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+
+.btn-whatsapp-premium:active {
+  transform: translateY(-1px);
+}
+
+.btn-whatsapp-premium svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.trust-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  padding-top: 28px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.trust-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--secondary);
+}
+
+@media (max-width: 576px) {
+  .premium-booking-card {
+    padding: 40px 24px;
+    border-radius: 20px;
+  }
+  .premium-card-title {
+    font-size: 1.75rem;
+  }
+  .btn-whatsapp-premium {
+    font-size: 1rem;
+    padding: 16px 24px;
+  }
+  .trust-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+

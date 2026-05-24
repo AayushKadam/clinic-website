@@ -123,24 +123,44 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(updateArrowStates, 150);
       window.addEventListener('resize', updateArrowStates);
     }
-  });
-
-
-  /* ==========================================================================
-     5. WHATSAPP FRONT DESK SELECTOR (Booking Page Only)
+  });  /* ==========================================================================
+     5. PREMIUM DYNAMIC WHATSAPP SELECTOR (Booking/Landing Page Only)
      ========================================================================== */
   const whatsappDeskSelect = document.getElementById('whatsapp-desk');
   const whatsappBtn = document.getElementById('whatsapp-btn');
-  const baseMessage = "Hello! I would like to book an appointment at the clinic. Please let me know the available slots.";
-  const encodedMessage = encodeURIComponent(baseMessage);
+
+  const desks = {
+    general: {
+      number: "+918824595243",
+      label: "Connect with General Desk",
+      message: "Hello! I would like to book an appointment at the clinic. Please let me know the available slots."
+    },
+    maternity: {
+      number: "+918824595243",
+      label: "Connect with Maternity Desk",
+      message: "Hello! I'd like to book an appointment for maternity or obstetrics care. Please let me know the next available slot with Dr. Evelyn Rose."
+    },
+    pediatrics: {
+      number: "+918824595243",
+      label: "Connect with Pediatrics Desk",
+      message: "Hello! I'd like to book an appointment for a pediatric wellness checkup. Please let me know the next available slot with Dr. Sarah Jenkins."
+    }
+  };
 
   if (whatsappDeskSelect && whatsappBtn) {
     whatsappDeskSelect.addEventListener('change', () => {
-      const selectedNumber = whatsappDeskSelect.value;
-      whatsappBtn.href = `https://wa.me/${selectedNumber}?text=${encodedMessage}`;
+      const selectedVal = whatsappDeskSelect.value;
+      const deskData = desks[selectedVal] || desks.general;
+      
+      const encodedMsg = encodeURIComponent(deskData.message);
+      whatsappBtn.href = `https://wa.me/${deskData.number}?text=${encodedMsg}`;
+      
+      const btnSpan = whatsappBtn.querySelector('span');
+      if (btnSpan) {
+        btnSpan.textContent = deskData.label;
+      }
     });
   }
-
 
   /* ==========================================================================
      6. INTERACTIVE GOOGLE MAP MOCK & DEFERRED LAZY LOADING (Contact Page Only)

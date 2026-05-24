@@ -29,10 +29,9 @@ class ClinicFooter extends HTMLElement {
           <div class="footer-col">
             <h4 class="footer-col-title">Clinic Sections</h4>
             <ul class="footer-links">
-              <li><a href="services.html">Services Offered</a></li>
               <li><a href="doctors.html">Our Doctors</a></li>
               <li><a href="social-hub.html">Social Hub</a></li>
-              <li><a href="booking.html">Book Appointment</a></li>
+              <li><a href="index.html">Book Appointment</a></li>
               <li><a href="contact.html">Contact & Map</a></li>
             </ul>
           </div>
@@ -40,11 +39,11 @@ class ClinicFooter extends HTMLElement {
           <div class="footer-col">
             <h4 class="footer-col-title">Primary Services</h4>
             <ul class="footer-links">
-              <li><a href="services.html">Prenatal Obstetric Care</a></li>
-              <li><a href="services.html">Routine Pediatric Checkups</a></li>
-              <li><a href="services.html">Gynaecological Exams</a></li>
-              <li><a href="services.html">Neonatology Milestones</a></li>
-              <li><a href="services.html">Immunizations & Vaccines</a></li>
+              <li><a href="index.html#booking">Prenatal Obstetric Care</a></li>
+              <li><a href="index.html#booking">Routine Pediatric Checkups</a></li>
+              <li><a href="index.html#booking">Gynaecological Exams</a></li>
+              <li><a href="index.html#booking">Neonatology Milestones</a></li>
+              <li><a href="index.html#booking">Immunizations & Vaccines</a></li>
             </ul>
           </div>
 
@@ -64,17 +63,6 @@ class ClinicFooter extends HTMLElement {
                 <span>Springfield, OR 97477</span>
               </li>
             </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div class="footer-bottom-container container">
-            <p class="copyright-text">&copy; 2026 Aura Maternity & Pediatrics Clinic. All rights reserved. Created for informational purposes.</p>
-            <div class="footer-bottom-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Patient Rights</a>
-            </div>
           </div>
         </div>
       </footer>
